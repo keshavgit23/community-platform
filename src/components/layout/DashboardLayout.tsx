@@ -26,10 +26,10 @@ const DashboardLayout = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <DashboardSidebar />
+      <DashboardSidebar/>
       <div className="pl-64">
         <DashboardNavbar />
-        <main className="p-6">
+        <main className="flex-1p-6">
           <Outlet />
         </main>
       </div>
