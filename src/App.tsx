@@ -17,6 +17,11 @@ import Members from "./pages/Members";
 import MemberProfile from "./pages/MemberProfile";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Careers from "./pages/Careers";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 import DashboardLayout from "./components/layout/DashboardLayout";
 
@@ -34,6 +39,11 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
             
             {/* Dashboard Routes */}
             <Route path="/dashboard" element={<DashboardLayout />}>

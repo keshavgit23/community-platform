@@ -1,8 +1,21 @@
 import { forwardRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Users, Github, Twitter } from "lucide-react";
+import { useAuth } from "@/hooks/useAuth";
 
 const Footer = forwardRef<HTMLElement>((_, ref) => {
+  const { user } = useAuth();
+  const navigate = useNavigate();
+
+  const handleProtectedLink = (path: string) => (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (user) {
+      navigate(`/dashboard${path}`);
+    } else {
+      navigate("/login");
+    }
+  };
+
   return (
     <footer ref={ref} className="border-t bg-card">
       <div className="container mx-auto px-4 py-12">
@@ -24,9 +37,33 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
           <div className="space-y-4">
             <h4 className="font-semibold">Product</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link to="/posts" className="hover:text-foreground transition-colors">Posts</Link></li>
-              <li><Link to="/events" className="hover:text-foreground transition-colors">Events</Link></li>
-              <li><Link to="/members" className="hover:text-foreground transition-colors">Members</Link></li>
+              <li>
+                <a 
+                  href="/dashboard/posts" 
+                  onClick={handleProtectedLink("/posts")}
+                  className="hover:text-foreground transition-colors cursor-pointer"
+                >
+                  Posts
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/dashboard/events" 
+                  onClick={handleProtectedLink("/events")}
+                  className="hover:text-foreground transition-colors cursor-pointer"
+                >
+                  Events
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/dashboard/members" 
+                  onClick={handleProtectedLink("/members")}
+                  className="hover:text-foreground transition-colors cursor-pointer"
+                >
+                  Members
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -34,9 +71,21 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
           <div className="space-y-4">
             <h4 className="font-semibold">Company</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-foreground transition-colors">About</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Contact</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Careers</a></li>
+              <li>
+                <Link to="/about" className="hover:text-foreground transition-colors">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="hover:text-foreground transition-colors">
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link to="/careers" className="hover:text-foreground transition-colors">
+                  Careers
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -44,15 +93,23 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
           <div className="space-y-4">
             <h4 className="font-semibold">Legal</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-foreground transition-colors">Privacy</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Terms</a></li>
+              <li>
+                <Link to="/privacy" className="hover:text-foreground transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/terms" className="hover:text-foreground transition-colors">
+                  Terms & Conditions
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 mt-8 border-t">
           <p className="text-sm text-muted-foreground">
-            © 2024 Community. All rights reserved.
+            © 2025 Community. All rights reserved.
           </p>
           <div className="flex items-center gap-4 mt-4 md:mt-0">
             <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
