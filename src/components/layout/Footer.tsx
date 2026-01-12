@@ -10,7 +10,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
   const handleProtectedLink = (path: string) => (e: React.MouseEvent) => {
     e.preventDefault();
     if (user) {
-      navigate(`/dashboard${path}`);
+      navigate(path);
     } else {
       navigate("/login");
     }
