@@ -40,7 +40,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
               <li>
                 <a 
                   href="/dashboard/posts" 
-                  onClick={handleProtectedLink("/posts")}
+                  onClick= {handleProtectedLink("/dashboard/posts")}
                   className="hover:text-foreground transition-colors cursor-pointer"
                 >
                   Posts
@@ -48,8 +48,8 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
               </li>
               <li>
                 <a 
-                  href="/dashboard/events" 
-                  onClick={handleProtectedLink("/events")}
+                  href="/events" 
+                  onClick={handleProtectedLink("/dashboard/events")}
                   className="hover:text-foreground transition-colors cursor-pointer"
                 >
                   Events
@@ -57,8 +57,8 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
               </li>
               <li>
                 <a 
-                  href="/dashboard/members" 
-                  onClick={handleProtectedLink("/members")}
+                  href="/members" 
+                  onClick={handleProtectedLink("/dashboard/members")}
                   className="hover:text-foreground transition-colors cursor-pointer"
                 >
                   Members
@@ -95,7 +95,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <Link to="/privacy" className="hover:text-foreground transition-colors">
-                  Privacy Policy
+                  Privacy
                 </Link>
               </li>
               <li>
