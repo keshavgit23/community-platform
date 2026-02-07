@@ -9,6 +9,10 @@ A modern full-stack community platform built to enable users to **connect**, **c
 - **Responsive UI** for seamless cross-device experience
 - Backend-integrated workflows for **data storage** and retrieval
 ---
+## Demo Login Credentials
+**Email:** demo12@gmail.com
+**Password:** demo123 
+---
 ## Tech Stack
 **Frontend:** Modern JavaScript framework
 **Backend / DB:** Supabase (PostgreSQL)
@@ -21,3 +25,4 @@ A modern full-stack community platform built to enable users to **connect**, **c
 - Configured cloud deployment pipeline from GitHub to production
 - Focused on rapid prototyping while maintaining production readiness
 ---
+
