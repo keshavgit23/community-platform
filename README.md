@@ -10,14 +10,14 @@ A modern full-stack community platform built to enable users to **connect**, **c
 - Backend-integrated workflows for **data storage** and retrieval
 ---
 ## Demo Login Credentials
-**Email:** demo12@gmail.com
-**Password:** demo123 
+- **Email:** demo12@gmail.com
+- **Password:** demo123 
 ---
 ## Tech Stack
-**Frontend:** Modern JavaScript framework
-**Backend / DB:** Supabase (PostgreSQL)
-**Deployment:** Vercel
-**Tools:** GitHub for version control
+- **Frontend:** Modern JavaScript framework
+- **Backend / DB:** Supabase (PostgreSQL)
+- **Deployment:** Vercel
+- **Tools:** GitHub for version control
 ---
 ## Highlights
 - Designed with scalability in mind using managed backend services
